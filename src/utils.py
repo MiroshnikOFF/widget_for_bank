@@ -8,9 +8,9 @@ def get_operations_list(operations):
     :param operations: json
     :return: list
     """
-    file = open(operations)
-    operations_list = json.load(file)
-    return operations_list
+    with open(operations, 'r') as file:
+        operations_list = json.load(file)
+        return operations_list
 
 
 def get_operations_class_list(operations_list):
