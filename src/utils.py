@@ -1,5 +1,5 @@
 import json
-from operation import Operation
+from src.operation import Operation
 
 
 def get_operations_list(operations):
