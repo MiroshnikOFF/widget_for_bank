@@ -1,4 +1,4 @@
-from utils import get_operations_list, get_operations_class_list, operations_sorted
+from src.utils import get_operations_list, get_operations_class_list, operations_sorted
 
 # json файл с данными об операциях
 operations_json = "operations.json"
