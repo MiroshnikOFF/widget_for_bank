@@ -13,8 +13,8 @@ operations_objects = get_operations_class_list(operations_list)
 operations_sorted = operations_sorted(operations_objects)
 
 # Подготовка списка для вывода
-operations_for_print = operations_sorted[:3]
+operations_for_print = operations_sorted[:5]
 
-# Вывод трех последних операций
+# Вывод пяти последних операций
 for operation in operations_for_print:
     print(operation)
