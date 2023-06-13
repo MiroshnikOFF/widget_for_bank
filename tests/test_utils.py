@@ -46,8 +46,18 @@ def test_get_operations_class_list(operation, expected):
     assert operation_class_list[0].to == expected
 
 
-def test_operations_sorted(operations_list):
-    obj_list = utils.get_operations_class_list(operations_list)
+@pytest.fixture
+def date_list():
+    return [
+        {"date": "2019-09-11T17:30:34.445824"},
+        {"date": "2018-10-14T22:27:25.205631"},
+        {"date": "2019-04-12T17:27:27.896421"},
+        {"date": "2018-02-03T14:52:08.093722"},
+        {"date": "2018-03-02T02:03:11.563721"},
+        {"date": "2018-06-12T07:17:01.311610"},
+    ]
+def test_operations_sorted(date_list):
+    obj_list = utils.get_operations_class_list(date_list)
     sort_list = utils.operations_sorted(obj_list)
     dates = []
     for el in sort_list:
@@ -60,6 +70,3 @@ def test_operations_sorted(operations_list):
         assert dates[date_1] > dates[date_2]
         date_1 += 1
         date_2 += 1
-
-
-
