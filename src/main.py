@@ -1,7 +1,7 @@
 from src.utils import get_operations_list, get_operations_class_list, operations_sorted
 
 # json файл с данными об операциях
-operations_json = "operations.json"
+operations_json = "../operations.json"
 
 # Распаковка данных об операциях из json в список словарей
 operations_list = get_operations_list(operations_json)
