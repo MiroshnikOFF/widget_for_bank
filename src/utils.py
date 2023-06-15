@@ -1,5 +1,6 @@
 import json
 from src.operation import Operation
+import datetime
 
 
 def get_operations_list(operations):
@@ -65,9 +66,9 @@ def operations_sorted(objects_list):
     # Создает словарь для сортировки
     for obj in objects_list:
         if obj.state == "EXECUTED":
-            # Отбрасывает время и преобразует дату в int
+            # Отбрасывает время и преобразует в объект datetime
             date_without_time = obj.date.split("T")[0]
-            date = int("".join(date_without_time.split("-")))
+            date = datetime.datetime.strptime(date_without_time, "%Y-%m-%d")
             # Добавляет в словарь пару int(дата): <операция>
             objects_for_sort[date] = obj
     # Сортирует словарь по дате
